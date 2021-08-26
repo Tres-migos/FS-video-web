@@ -1,23 +1,24 @@
 import logo from './logo.svg';
+import { Grid } from 'semantic-ui-react'
+import HeaderBar from './components/HeaderBar'
+import SideNav from './components/SideNav'
+import Home from './components/Home'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <HeaderBar />
+      <Grid padded>
+        <Grid.Row columns={2}>
+          <Grid.Column floated='left' width={3}>
+            <SideNav />
+          </Grid.Column>
+          <Grid.Column width={12}>
+            <Home />
+          </Grid.Column>
+        </Grid.Row>
+      </Grid>
     </div>
   );
 }
