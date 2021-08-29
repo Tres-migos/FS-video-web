@@ -1,6 +1,10 @@
+import { Link } from 'react-router-dom'
 import { Grid, Button, Image, Input, Header } from 'semantic-ui-react'
 
 export default function HeaderBar() {
+  
+
+
   return (
     <div>
       <Grid columns={3} padded >
@@ -17,6 +21,7 @@ export default function HeaderBar() {
           <Grid.Column floated='right' width={3}>
             <Button.Group>
               <Button inverted color='green'>Login</Button>
+              <Link to="/login">Login</Link>
               <Button>Register</Button>
             </Button.Group>
           </Grid.Column>

@@ -1,6 +1,13 @@
 import axios from 'axios';
 import React,{Component} from 'react';
 
+const instance = axios.create({
+    baseURL: 'http://localhost:8080/video',
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+    },
+  });
+
 class Uploader extends Component { 
 
     state = { 
@@ -30,7 +37,7 @@ class Uploader extends Component {
      
       // Request made to the backend api 
       // Send formData object 
-      axios.post("api/uploadfile", formData); 
+      instance.post("/upload", formData); 
     }; 
      
     // File content to be displayed after 

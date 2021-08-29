@@ -18,7 +18,9 @@ const VideoGames = () => (
                 size='medium'
                 href='http://google.com'
                 target='_blank'
+                
               />
+              
             </Grid.Column>
             <Grid.Column>
               <Image
