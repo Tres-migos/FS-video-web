@@ -26,10 +26,6 @@ const DisplayMedia = ({ media }) => {
         setVideo(media_URL.data)
     }
 
-    const handleSlides = () => {
-        setSlides(prev => [...prev, video])
-    }
-
     useEffect(() => {
         getMediaURL()
         handleLoader()
