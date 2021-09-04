@@ -6,8 +6,8 @@ import Home from './Pages/Home'
 import VideoGames from './Pages/VideoGames'
 import Music from './Pages/Music'
 import Upload from './Pages/Uploads'
-
 import './App.css';
+import Login from './Pages/Login'
 
 const routes = [
   {
@@ -27,6 +27,10 @@ const routes = [
     path: "/music",
     main: () => <Music />
   },
+  {
+    path: "/login",
+    main: () => <Login />
+  }
 ];
 
 function App() {
