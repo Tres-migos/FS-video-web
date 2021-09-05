@@ -8,6 +8,7 @@ import Music from './Pages/Music'
 import Upload from './Pages/Uploads'
 import './App.css';
 import Login from './Pages/Login'
+import Register from './Pages/Register'
 
 const routes = [
   {
@@ -30,6 +31,10 @@ const routes = [
   {
     path: "/login",
     main: () => <Login />
+  },
+  {
+    path: "/register",
+    main: () => <Register />
   }
 ];
 

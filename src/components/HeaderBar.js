@@ -27,7 +27,9 @@ export default function HeaderBar(){
               <Link to="/login">Login</Link>
               </Button>
               
-              <Button>Register</Button>
+              <Button>
+                <Link to="/register">Register</Link>
+              </Button>
             </Button.Group>
           </Grid.Column>
 
