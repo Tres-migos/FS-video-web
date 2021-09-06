@@ -18,7 +18,7 @@ export default class SideNav extends Component {
       <>
 
         <Menu secondary vertical>
-        
+         
           <Menu.Item
             name='home'
             active={activeItem === 'home'}

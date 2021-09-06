@@ -10,6 +10,7 @@ import './App.css';
 import Login from './Pages/Login'
 import Register from './Pages/Register'
 
+
 const routes = [
   {
     path: "/",
@@ -47,6 +48,7 @@ function App() {
           <Grid.Row columns={2}>
             <Grid.Column floated='left' width={3}>
               <SideNav />
+              
             </Grid.Column>
 
             <Grid.Column width={12}>

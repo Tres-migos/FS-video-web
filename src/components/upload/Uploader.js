@@ -66,7 +66,7 @@ class Uploader extends Component {
       return ( 
         <div> 
             <h3> 
-              File Upload using React! 
+              Upload a video!
             </h3> 
             <div> 
                 <input type="file" onChange={this.onFileChange} /> 
