@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import axios from 'axios'
 import { Button, Form, Header, Grid, } from 'semantic-ui-react'
-
-
+import { Redirect, useHistory } from 'react-router-dom'
 
 const instance = axios.create({
   baseURL: 'http://localhost:8080/account',
@@ -20,15 +19,21 @@ export default function Register () {
     return username.length > 0 && password.length > 0;
   }
 
-  function onSubmit (event)  {
-    
+  function onSubmit ()  {
+    register();
+    goHome();
+  }
+
+  function register(){
     const account = { username, password };
     axios.post('http://localhost:8080/account/create', account)
-        .then(console.log("Account was made"))
-    console.log(username)
+        .then(console.log("Account was made"));
   }
-  
-  
+
+  function goHome() {
+    console.log("TEST TEST")
+    return <Redirect to="/" />
+  }
 
 
   return(
@@ -58,7 +63,7 @@ export default function Register () {
   
     <Button 
       fluid primary
-      onClick = {onSubmit} 
+      onClick = {onSubmit}
       type='submit' 
       disabled={!validateForm()}>Submit</Button>
   </Form>
