@@ -21,7 +21,11 @@ export default function Register () {
   }
 
   function onSubmit (event)  {
-    console.log(this.state)
+    
+    const account = { username, password };
+    axios.post('http://localhost:8080/account/create', account)
+        .then(console.log("Account was made"))
+    console.log(username)
   }
   
   
@@ -52,7 +56,11 @@ export default function Register () {
       onChange={(e) => setPassword(e.target.value)}/>
     </Form.Field>
   
-    <Button fluid primary type='submit' disabled={!validateForm()}>Submit</Button>
+    <Button 
+      fluid primary
+      onClick = {onSubmit} 
+      type='submit' 
+      disabled={!validateForm()}>Submit</Button>
   </Form>
         </Grid.Column>
         
