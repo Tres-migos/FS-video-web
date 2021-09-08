@@ -7,6 +7,7 @@ import { useAppContext } from '../lib/contextLib'
 
 
 
+
 export default function Register () {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -17,6 +18,7 @@ export default function Register () {
   function validateForm(){
     return username.length > 0 && password.length > 0;
   }
+
 
   async function register() {
     const account = { username, password };
