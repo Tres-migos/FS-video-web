@@ -1,70 +1,70 @@
 import React, {useState} from 'react'
 import axios from 'axios'
-import { Button, Form, Header, Grid, } from 'semantic-ui-react'
+import { Button, Form, Header, Grid, Segment} from 'semantic-ui-react'
+import {useHistory} from 'react-router-dom'
+import { useAppContext } from '../lib/contextLib'
 
 
 
-const instance = axios.create({
-  baseURL: 'http://localhost:8080/account',
-  headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-  },
-});
 
 export default function Register () {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const {userHasAuthenticated} = useAppContext();
+  const history = useHistory()
   
 
   function validateForm(){
     return username.length > 0 && password.length > 0;
   }
 
-  function onSubmit (event)  {
-    
+  async function register() {
     const account = { username, password };
-    axios.post('http://localhost:8080/account/create', account)
-        .then(console.log("Account was made"))
-    console.log(username)
+    try {
+      await axios.post('http://localhost:8080/account/create', account)
+      userHasAuthenticated(true)
+      history.push("/")
+    } catch (e) {
+      userHasAuthenticated(false)
+      alert(e.message)
+    }
   }
   
-  
 
 
-  return(
-    <Grid justified>
-        <Grid.Column style={{maxWidth:700, marginTop: 20 }}>
-            <Header>Register</Header>
+  return (
+    <Grid centered>
+      <Grid.Column style={{ maxWidth: 600, marginTop: 20 }}>
+        <Segment raised padded='very'>
+          <Header>Register</Header>
+          <Form >
+            <Form.Field>
+              <label>Username</label>
+              <input
+                value={username}
+                placeholder="Username"
+                onChange={(e) => setUsername(e.target.value)} />
+            </Form.Field>
+            <Form.Field>
+              <label>Password</label>
+              <input
+                value={password}
+                type='Password'
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)} />
+            </Form.Field>
 
-    <Form >
-    <Form.Field>
-      <label>Username</label>
-      <input 
-      value={username}
-      name = 'username' 
-      type='username'
-      placeholder="Username" 
-      onChange={(e) => setUsername(e.target.value)} />
-    </Form.Field>
-    <Form.Field>
-      <label>Password</label>
-      <input 
-      value={password}
-      name= 'password' 
-      type='Password'
-      placeholder="Password" 
-      onChange={(e) => setPassword(e.target.value)}/>
-    </Form.Field>
-  
-    <Button 
-      fluid primary
-      onClick = {onSubmit} 
-      type='submit' 
-      disabled={!validateForm()}>Submit</Button>
-  </Form>
-        </Grid.Column>
-        
+            <Button
+              fluid primary
+              onClick={register}
+              type='submit'
+              disabled={!validateForm()}>Submit</Button>
+          </Form>
+        </Segment>
+
+      </Grid.Column>
+
     </Grid>
   );
-  
+
 }
