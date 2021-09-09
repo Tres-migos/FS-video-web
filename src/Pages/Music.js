@@ -16,7 +16,7 @@ const Music = () => (
                 src='https://www.mapcom.com/wp-content/uploads/2015/07/video-placeholder.jpg'
                 as='a'
                 size='medium'
-                href='http://google.com'
+                href='https://tres-migos-videos.s3.amazonaws.com/More+-+KDA'
                 target='_blank'
               />
             </Grid.Column>
@@ -25,7 +25,7 @@ const Music = () => (
                 src='https://www.mapcom.com/wp-content/uploads/2015/07/video-placeholder.jpg'
                 as='a'
                 size='medium'
-                href='http://google.com'
+                href='https://tres-migos-videos.s3.amazonaws.com/Porter+Robinson+-+Shelter'
                 target='_blank'
               />
             </Grid.Column>
@@ -34,7 +34,7 @@ const Music = () => (
                 src='https://www.mapcom.com/wp-content/uploads/2015/07/video-placeholder.jpg'
                 as='a'
                 size='medium'
-                href='http://google.com'
+                href='https://tres-migos-videos.s3.amazonaws.com/Say+So+Doja+Cat.mp4'
                 target='_blank'
               />
             </Grid.Column>
@@ -43,7 +43,16 @@ const Music = () => (
                 src='https://www.mapcom.com/wp-content/uploads/2015/07/video-placeholder.jpg'
                 as='a'
                 size='medium'
-                href='http://google.com'
+                href='https://tres-migos-videos.s3.amazonaws.com/Circles+Post+Malone.mp4'
+                target='_blank'
+              />
+            </Grid.Column>
+            <Grid.Column>
+              <Image
+                src='https://www.mapcom.com/wp-content/uploads/2015/07/video-placeholder.jpg'
+                as='a'
+                size='medium'
+                href='https://tres-migos-videos.s3.amazonaws.com/NewRules-DuaLipa'
                 target='_blank'
               />
             </Grid.Column>

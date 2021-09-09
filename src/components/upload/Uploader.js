@@ -30,6 +30,7 @@ class Uploader extends Component {
         "myFile", 
         this.state.selectedFile, 
         this.state.selectedFile.name 
+        
       ); 
      
       // Details of the uploaded file 
